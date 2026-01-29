@@ -6,7 +6,7 @@ from vasicek import simulate_vasicek, calculate_expected_path, calculate_yield_c
 
 # --- 1. PAGE CONFIGURATION ---
 st.set_page_config(
-    page_title="Interest Rate Model",
+    page_title="Vasicek Rate Model",
     page_icon="hmC",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -69,8 +69,8 @@ st.markdown("""
 col_logo, col_title = st.columns([1, 10])
 
 with col_title:
-    st.title("Vasicek Pricing Engine")
-    st.markdown("Interactive Interest Rate Modelling & Risk Analysis")
+    st.title("Vasicek Rate Model")
+    st.markdown("Interactive Interest Rate Modelling")
 
 st.markdown("---")
 
@@ -78,22 +78,22 @@ st.markdown("---")
 with st.expander("⚙️ Model Configuration (Click to Expand)", expanded=True):
     c1, c2, c3, c4, c5, c6 = st.columns(6)
     with c1:
-        current_rate = st.number_input("Current Rate (r0)", value=0.040, step=0.001, format="%.3f")
+        current_rate = st.number_input("Current Rate ($$r_0$$)", value=0.040, step=0.001, format="%.3f")
     with c2:
-        long_term_mean = st.number_input("Long Term Mean (b)", value=0.050, step=0.001, format="%.3f")
+        long_term_mean = st.number_input("Long Term Mean ($$b$$)", value=0.050, step=0.001, format="%.3f")
     with c3:
-        reversion_speed = st.number_input("Reversion Speed (a)", value=0.50, step=0.01, format="%.2f")
+        reversion_speed = st.number_input("Reversion Speed ($$a$$)", value=0.50, step=0.01, format="%.2f")
     with c4:
-        volatility = st.number_input("Volatility (σ)", value=0.020, step=0.001, format="%.3f")
+        volatility = st.number_input("Volatility ($$σ$$)", value=0.020, step=0.001, format="%.3f")
     with c5:
-        time_horizon = st.number_input("Time Horizon (Yrs)", value=10, step=1)
+        time_horizon = st.number_input("Time Horizon ($$Yrs$$)", value=10, step=1)
     with c6:
-        num_simulations = st.number_input("Simulations (N)", value=50, step=10)
+        num_simulations = st.number_input("Simulations ($$N$$)", value=50, step=10)
 
 # --- 5. MAIN CONTENT TABS ---
 tab_sim, tab_yield, tab_dist, tab_maths, tab_code = st.tabs([
-    "📈 Path Simulation", 
-    "📊 Yield Curve", 
+    "📈 Vasicek Simulation", 
+    "📊 Bond Yield Curve", 
     "🎯 Probability Forecast",
     "🧮 The Mathematics",
     "💻 The Code"
@@ -103,7 +103,7 @@ tab_sim, tab_yield, tab_dist, tab_maths, tab_code = st.tabs([
 # TAB 1: PATH SIMULATION
 # ==========================================
 with tab_sim:
-    st.markdown("### Monte Carlo Rate Simulation")
+    st.markdown("### Interest Rate Monte Carlo Simulation")
     st.caption(f"Visualizing {num_simulations} stochastic paths evolving over {time_horizon} years.")
     
     # Run Simulation
@@ -121,7 +121,7 @@ with tab_sim:
         fig_sim.add_trace(go.Scatter(
             x=time_axis, y=rate_path, 
             mode='lines', 
-            opacity=0.3, 
+            opacity=0.4, 
             line=dict(width=1),
             name=f'Sim {i+1}',
             showlegend=False
