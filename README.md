@@ -2,7 +2,6 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://vasicekmodel.streamlit.app)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Live-success)
 
 > **Live Demo:** [Click here to launch the dashboard](https://vasicekmodel.streamlit.app)
@@ -88,3 +87,16 @@ streamlit run app.py
 
 ## Insights & Risk Analysis
 The dashboard includes logic to detect Yield Curve Inversion ($r_{long} < r_{short}$), a reliable leading indicator of economic recession. The probability forecaster also calculates 95% Confidence Intervals for future rates, aiding in VaR (Value at Risk) analysis.
+
+## 📄 License
+Copyright © 2026 Sajid Ahmed. All Rights Reserved.
+
+This repository is intended solely for portfolio review and recruitment purposes. By accessing this repository, you acknowledge the following terms:
+
+View Only: Permission is granted to view the source code for the purpose of evaluating my professional skills and experience.
+
+No Unauthorised Use: No permission is granted to copy, modify, distribute, or use this code for any personal, commercial, or educational project.
+
+No AI Training: Use of this source code for the purpose of training machine learning models or generative AI is strictly prohibited.
+
+If you are a recruiter or a potential collaborator and have questions regarding the implementation of this project, please feel free to reach out via my contact details below.
