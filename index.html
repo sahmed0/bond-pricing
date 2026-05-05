@@ -129,6 +129,7 @@
             flex-direction: column;
             position: relative;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: auto;
             overflow: hidden;
         }
 
@@ -190,6 +191,7 @@
             padding: 0.5rem;
             border-radius: var(--radius-md);
             transition: all 0.2s;
+            will-change: auto;
         }
 
         .expand-btn:hover {
@@ -260,6 +262,7 @@
             font-weight: 600;
             color: var(--text-main);
             transition: all 0.2s;
+            will-change: auto;
         }
 
         .control-group input[type="number"]:focus {
@@ -362,6 +365,7 @@
             color: var(--text-muted);
             font-size: clamp(2rem, 1.286rem + 3.571vw, 3rem);
             transition: all 0.3s;
+            will-change: auto;
         }
 
         .social-icons a:hover {
@@ -375,7 +379,7 @@
             margin-right: 1rem;
             text-decoration: none;
             transition: transform 0.2s ease;
-            will-change: transform;
+            will-change: auto;
         }
 
         .kiwi-link:hover {
